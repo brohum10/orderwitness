@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "initial": {"balance": 0},
+  "operations": [
+    {"id": "write", "client": "a", "start": 0, "end": 1, "op": "put", "key": "balance", "value": 1, "result": null},
+    {"id": "read", "client": "b", "start": 2, "end": 3, "op": "get", "key": "balance", "result": 0}
+  ]
+}

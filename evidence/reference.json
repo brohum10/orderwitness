@@ -1,0 +1,159 @@
+{
+  "budget-one": {
+    "final_state": null,
+    "history_sha256": "dcd48dfd12cc2dd1b250a34406088c10e9aaa39db340f974cd2da95fe96c2b49",
+    "max_states": 1,
+    "operation_count": 3,
+    "rejected_prefix_examples": [
+      {
+        "model_value_before": 0,
+        "observed_result": false,
+        "operation": "loser",
+        "prefix": []
+      }
+    ],
+    "scope": "completed get/put/cas operations; one globally ordered invocation/response log",
+    "stats": {
+      "cache_hits": 0,
+      "dead_states": 0,
+      "inconsistent_returns": 1,
+      "real_time_edges": 2,
+      "states_explored": 1,
+      "transitions_considered": 2
+    },
+    "status": "unknown",
+    "version": 1,
+    "witness": null
+  },
+  "double-cas-fail": {
+    "final_state": null,
+    "history_sha256": "4d80f448f9507296d52f90df6b127470dfeda3926bc5ae42a5d1c07b8741d346",
+    "max_states": 50000,
+    "operation_count": 3,
+    "rejected_prefix_examples": [
+      {
+        "model_value_before": 2,
+        "observed_result": true,
+        "operation": "winner",
+        "prefix": [
+          "loser"
+        ]
+      },
+      {
+        "model_value_before": 1,
+        "observed_result": true,
+        "operation": "loser",
+        "prefix": [
+          "winner"
+        ]
+      }
+    ],
+    "scope": "completed get/put/cas operations; one globally ordered invocation/response log",
+    "stats": {
+      "cache_hits": 0,
+      "dead_states": 3,
+      "inconsistent_returns": 2,
+      "real_time_edges": 2,
+      "states_explored": 3,
+      "transitions_considered": 4
+    },
+    "status": "nonlinearizable",
+    "version": 1,
+    "witness": null
+  },
+  "eight-overlapping-writes": {
+    "final_state": null,
+    "history_sha256": "aceea23b95b788c9a18a39506e50767ae7b7a9b2e95713c95c4c87811209573c",
+    "max_states": 50000,
+    "operation_count": 9,
+    "rejected_prefix_examples": [
+      {
+        "model_value_before": 0,
+        "observed_result": 1,
+        "operation": "read",
+        "prefix": [
+          "write-0",
+          "write-1",
+          "write-2",
+          "write-3",
+          "write-4",
+          "write-5",
+          "write-6",
+          "write-7"
+        ]
+      }
+    ],
+    "scope": "completed get/put/cas operations; one globally ordered invocation/response log",
+    "stats": {
+      "cache_hits": 769,
+      "dead_states": 256,
+      "inconsistent_returns": 1,
+      "real_time_edges": 8,
+      "states_explored": 256,
+      "transitions_considered": 1025
+    },
+    "status": "nonlinearizable",
+    "version": 1,
+    "witness": null
+  },
+  "overlap-pass": {
+    "final_state": {
+      "seat": 1
+    },
+    "history_sha256": "dcd48dfd12cc2dd1b250a34406088c10e9aaa39db340f974cd2da95fe96c2b49",
+    "max_states": 50000,
+    "operation_count": 3,
+    "rejected_prefix_examples": [
+      {
+        "model_value_before": 0,
+        "observed_result": false,
+        "operation": "loser",
+        "prefix": []
+      }
+    ],
+    "scope": "completed get/put/cas operations; one globally ordered invocation/response log",
+    "stats": {
+      "cache_hits": 0,
+      "dead_states": 0,
+      "inconsistent_returns": 1,
+      "real_time_edges": 2,
+      "states_explored": 4,
+      "transitions_considered": 4
+    },
+    "status": "linearizable",
+    "version": 1,
+    "witness": [
+      "winner",
+      "loser",
+      "observe"
+    ]
+  },
+  "stale-read-fail": {
+    "final_state": null,
+    "history_sha256": "91463771c47375a98619edb8f788002aabaad6a940649c15275008aa86d5ecac",
+    "max_states": 50000,
+    "operation_count": 2,
+    "rejected_prefix_examples": [
+      {
+        "model_value_before": 1,
+        "observed_result": 0,
+        "operation": "read",
+        "prefix": [
+          "write"
+        ]
+      }
+    ],
+    "scope": "completed get/put/cas operations; one globally ordered invocation/response log",
+    "stats": {
+      "cache_hits": 0,
+      "dead_states": 2,
+      "inconsistent_returns": 1,
+      "real_time_edges": 1,
+      "states_explored": 2,
+      "transitions_considered": 2
+    },
+    "status": "nonlinearizable",
+    "version": 1,
+    "witness": null
+  }
+}

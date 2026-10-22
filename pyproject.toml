@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orderwitness"
+version = "0.1.0"
+description = "Bounded linearizability checking with independently replayable register-history witnesses"
+requires-python = ">=3.12"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "Soham Jindal"}]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/brohum10/orderwitness"
+Issues = "https://github.com/brohum10/orderwitness/issues"
+
+[project.scripts]
+orderwitness = "orderwitness.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["orderwitness*"]
+
+[tool.black]
+line-length = 100

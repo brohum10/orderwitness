@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "initial": {"seat": 0},
+  "operations": [
+    {"id": "winner", "client": "a", "start": 0, "end": 4, "op": "cas", "key": "seat", "expected": 0, "value": 1, "result": true},
+    {"id": "loser", "client": "b", "start": 1, "end": 2, "op": "cas", "key": "seat", "expected": 0, "value": 2, "result": false},
+    {"id": "observe", "client": "c", "start": 5, "end": 6, "op": "get", "key": "seat", "result": 1}
+  ]
+}
